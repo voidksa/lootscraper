@@ -21,9 +21,7 @@
       "esbuild",
       "unrs-resolver"
     ],
-    "ignoredBuiltDependencies": [
-      "lefthook"
-    ]
+    "ignoredBuiltDependencies": ["lefthook"]
   },
   "scripts": {
     "dev": "cross-env DEBUG=\"grammy*\" vite-node src/main.ts",
@@ -42,7 +40,7 @@
     "format": "biome format . --write",
     "type-check": "tsc --noEmit",
     "check": "pnpm run lint && pnpm run type-check",
-    "prepare": "node -e \"process.env.CI || process.env.DOCKER_CONTAINER || process.exit(1)\" || lefthook install",
+    "prepare": "if [ \"$CI\" != \"true\" ] && [ \"$DOCKER_CONTAINER\" != \"true\" ]; then lefthook install; fi",
     "clean:npm": "pnpm exec rm -rf node_modules",
     "sync:npm": "pnpm i --frozen-lockfile",
     "upgrade:npm": "pnpm exec rm pnpm-lock.yaml && pnpm up --latest && pnpm i",
@@ -58,6 +56,7 @@
     "better-sqlite3": "11.10.0",
     "croner": "9.0.0",
     "cross-env": "7.0.3",
+    "express": "^4.21.2",
     "grammy": "1.36.3",
     "graphql": "16.11.0",
     "handlebars": "4.7.8",
@@ -70,8 +69,7 @@
     "winston-daily-rotate-file": "5.0.0",
     "winston-transport": "4.9.0",
     "yaml": "2.8.0",
-    "zod": "3.25.47",
-    "express": "^4.19.2"
+    "zod": "3.25.47"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
