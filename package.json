@@ -24,7 +24,7 @@
     "ignoredBuiltDependencies": ["lefthook"]
   },
   "scripts": {
-    "dev": "cross-env DEBUG='grammy*' vite-node src/main.ts"
+    "dev": "cross-env DEBUG='grammy*' vite-node src/main.ts",
     "build": "vite build",
     "start": "node dist/main.js",
     "test": "vitest",
