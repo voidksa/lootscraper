@@ -13,7 +13,7 @@ import { DateTime } from "luxon";
 import type { Locator, Page } from "playwright";
 
 const BASE_URL = "https://store.epicgames.com";
-const OFFER_URL = `${BASE_URL}/en-US/`;
+const OFFER_URL = `${BASE_URL}/ar/`;
 
 export class EpicGamesWebScraper extends BaseScraper {
   override getSchedule(): CronConfig[] {
