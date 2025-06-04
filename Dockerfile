@@ -83,7 +83,7 @@ COPY templates ./templates
 # USER node
 
 # Volume for persistent data
-VOLUME ["/data"]
+
 
 # Start the application
 CMD ["xvfb-run", "--auto-servernum", "node", "dist/main.js"]
